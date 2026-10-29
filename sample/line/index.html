@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>自治体LINE緊急配信 テンプレート集</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #ffffff;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 24px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    h1 {
+      font-size: 20px;
+      margin-top: 0;
+      margin-bottom: 20px;
+      color: #1a1a1a;
+      border-bottom: 2px solid #0056b3;
+      padding-bottom: 8px;
+    }
+    /* タブメニューのスタイル */
+    .tab-menu {
+      display: flex;
+      gap: 4px;
+      border-bottom: 2px solid #dee2e6;
+      margin-bottom: 20px;
+      overflow-x: auto;
+    }
+    .tab-btn {
+      padding: 10px 16px;
+      background-color: #f1f3f5;
+      border: 1px solid #dee2e6;
+      border-bottom: none;
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 14px;
+      color: #495057;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+    .tab-btn:hover {
+      background-color: #e9ecef;
+    }
+    .tab-btn.active {
+      background-color: #0056b3;
+      color: #ffffff;
+      border-color: #0056b3;
+    }
+    /* タブコンテンツ */
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    .meta-info {
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 12px;
+      background: #eef2f7;
+      padding: 8px 12px;
+      border-radius: 4px;
+    }
+    .meta-info span {
+      font-weight: bold;
+      color: #2b5797;
+    }
+    /* テキストエリアとコピーボタン */
+    .text-box-wrapper {
+      position: relative;
+      margin-bottom: 12px;
+    }
+    textarea {
+      width: 100%;
+      height: 320px;
+      padding: 12px;
+      font-size: 14px;
+      line-height: 1.6;
+      border: 1px solid #ced4da;
+      border-radius: 6px;
+      font-family: inherit;
+      resize: vertical;
+      background-color: #fafafa;
+    }
+    textarea:focus {
+      outline: none;
+      border-color: #0056b3;
+      background-color: #fff;
+    }
+    .copy-btn {
+      display: inline-block;
+      background-color: #28a745;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+    .copy-btn:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>自治体LINE 緊急配信テキストテンプレート</h1>
+
+  <!-- タブボタン -->
+  <div class="tab-menu">
+    <button class="tab-btn active" onclick="openTab(event, 'tab-bear')">クマ出没情報</button>
+    <button class="tab-btn" onclick="openTab(event, 'tab-rain')">大雨・気象注意喚起</button>
+    <button class="tab-btn" onclick="openTab(event, 'tab-evac')">避難指示</button>
+    <button class="tab-btn" onclick="openTab(event, 'tab-water')">断水・インフラ障害</button>
+  </div>
+
+  <!-- タブ1：クマ出没情報 -->
+  <div id="tab-bear" class="tab-content active">
+    <div class="meta-info">
+      推奨配信種別：<span>セグメント緊急配信（該当地区のみ）</span>
+    </div>
+    <div class="text-box-wrapper">
+      <textarea id="text-bear" readonly>【緊急】〇〇地区でのクマ出没・目撃情報
+
+本日〇時〇分頃、〇〇地区（〇〇付近）において、クマの目撃情報がありました。
+近隣にお住まいの方、通行される方は十分ご注意ください。
+
+■ 目撃日時・場所
+・日時：〇月〇日（〇） 〇時〇分頃
+・場所：〇〇町〇丁目（〇〇施設付近）
+
+■ 住民の皆様へのお願い
+・早朝や夕方・夜間の不要不急の外出（散歩・農作業等）は控えましょう。
+・外出時はラジオや鈴など音の出るものを身につけてください。
+・生ごみや未収穫果実など屋外に放置しないようご注意ください。
+
+⚠️ クマに遭遇してしまったら
+・大声を出さず、走って逃げないでください。
+・クマから目を離さず、ゆっくり静かに後退してください。
+
+📌 状況の詳細・出没マップ：
+https://www.city.example.lg.jp/bear-info
+
+📞 目撃した場合は、〇〇町役所（00-0000-0000）または最寄りの警察署（110番）へご連絡ください。</textarea>
+    </div>
+    <button class="copy-btn" onclick="copyText('text-bear')">テキストをコピー</button>
+  </div>
+
+  <!-- タブ2：大雨・気象注意喚起 -->
+  <div id="tab-rain" class="tab-content">
+    <div class="meta-info">
+      推奨配信種別：<span>全員緊急配信（または全域対象）</span>
+    </div>
+    <div class="text-box-wrapper">
+      <textarea id="text-rain" readonly>【緊急】大雨に関する注意喚起（〇〇町）
+
+現在、〇〇地区を中心に強い雨が続いています。
+土砂災害や河川の増水に警戒してください。
+
+■ 警戒事項
+・危険な場所（河川・用水路・崖近く）には近づかないでください。
+・最新の気象情報や町からの発令情報にご注意ください。
+
+■ 開設避難所
+・〇〇公民館
+・〇〇総合体育館
+
+※夜間の無理な移動は避け、自宅の安全な場所（2階以上等）へ避難してください。
+
+📌 町ホームページで詳細を確認：
+https://www.city.example.lg.jp/disaster-info</textarea>
+    </div>
+    <button class="copy-btn" onclick="copyText('text-rain')">テキストをコピー</button>
+  </div>
+
+  <!-- タブ3：避難指示 -->
+  <div id="tab-evac" class="tab-content">
+    <div class="meta-info">
+      推奨配信種別：<span>全員緊急配信（または該当セグメント）</span>
+    </div>
+    <div class="text-box-wrapper">
+      <textarea id="text-evac" readonly>【緊急避難指示】〇〇地区に避難指示を発令しました
+
+〇〇川の氾濫（または土砂災害）の危険性が高まったため、以下の対象地区に【避難指示】を発令しました。
+
+■ 対象地域
+〇〇町1丁目〜3丁目、〇〇地区全域
+
+■ 開設中の避難所
+・〇〇小学校（体育館）
+・〇〇生涯学習センター
+
+対象地域にお住まいの方は、速やかに全員避難所や安全な高台へ避難してください。
+避難が危険な場合は、建物内のより高い場所へ移動（垂直避難）してください。
+
+📌 避難所の空き状況・マップ：
+https://www.city.example.lg.jp/evac-map</textarea>
+    </div>
+    <button class="copy-btn" onclick="copyText('text-evac')">テキストをコピー</button>
+  </div>
+
+  <!-- タブ4：断水・インフラ障害 -->
+  <div id="tab-water" class="tab-content">
+    <div class="meta-info">
+      推奨配信種別：<span>セグメント緊急配信（対象地域のみ）</span>
+    </div>
+    <div class="text-box-wrapper">
+      <textarea id="text-water" readonly>【急告】〇〇地区における臨時断水のお知らせ
+
+〇〇地区にて配水管破損が発生したため、緊急修繕工事に伴う断水を実施しております。
+
+■ 対象地域
+〇〇町（セグメント配信対象者のみ）
+
+■ 断水予定時間
+本日 〇時〇分 〜 〇時〇分頃（復旧次第解除）
+
+■ 給水車の開設場所
+・〇〇公園（現在設置完了）
+
+ご迷惑をおかけしますが、水のご準備・節水にご協力をお願いいたします。
+
+📌 状況の詳細：
+https://www.city.example.lg.jp/water-info</textarea>
+    </div>
+    <button class="copy-btn" onclick="copyText('text-water')">テキストをコピー</button>
+  </div>
+</div>
+
+<script>
+  // タブ切り替え処理
+  function openTab(evt, tabId) {
+    const tabContents = document.getElementsByClassName("tab-content");
+    for (let i = 0; i < tabContents.length; i++) {
+      tabContents[i].classList.remove("active");
+    }
+    const tabBtns = document.getElementsByClassName("tab-btn");
+    for (let i = 0; i < tabBtns.length; i++) {
+      tabBtns[i].classList.remove("active");
+    }
+    document.getElementById(tabId).classList.add("active");
+    evt.currentTarget.classList.add("active");
+  }
+
+  // クリップボードへのコピー処理
+  function copyText(elementId) {
+    const textarea = document.getElementById(elementId);
+    textarea.select();
+    textarea.setSelectionRange(0, 99999); // モバイル対応
+    navigator.clipboard.writeText(textarea.value).then(() => {
+      alert("テキストをクリップボードにコピーしました。");
+    }).catch(err => {
+      alert("コピーに失敗しました。手動で範囲選択してコピーしてください。");
+    });
+  }
+</script>
+
+</body>
+</html>
