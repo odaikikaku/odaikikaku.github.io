@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>わたしたちのミッションと行動指針 - 大台町</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Swiper.js CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- Google Fonts: Zen Maru Gothic -->
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              dark: '#1b4332',
+              primary: '#2d6a4f',
+              medium: '#40916c',
+              light: '#52b788',
+              soft: '#d8f3dc',
+              bg: '#f4f6f0',
+              card: '#ffffff',
+              accent: '#f4a261',
+              warm: '#e9c46a',
+              text: '#2b2d42',
+              muted: '#6c757d'
+            }
+          },
+          fontFamily: {
+            sans: ['"Zen Maru Gothic"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Zen Maru Gothic', sans-serif;
+      background-color: #e9ecef;
+      color: #2b2d42;
+      touch-action: pan-y;
+      overflow: hidden;
+    }
+
+    /* モバイルビューポートコンテナ */
+    .mobile-container {
+      width: 100%;
+      max-width: 440px;
+      height: 100vh;
+      height: 100dvh;
+      margin: 0 auto;
+      background-color: #f4f6f0;
+      position: relative;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .swiper {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide {
+      box-sizing: border-box;
+      padding: 1.25rem 1rem 4.5rem 1rem;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* カスタムスクロールバー */
+    .swiper-slide::-webkit-scrollbar {
+      width: 4px;
+    }
+    .swiper-slide::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+
+    /* スワイプ誘導アニメーション */
+    @keyframes swipeHand {
+      0%, 100% { transform: translateX(0); opacity: 0.8; }
+      50% { transform: translateX(-15px); opacity: 1; }
+    }
+    .animate-swipe {
+      animation: swipeHand 1.8s infinite ease-in-out;
+    }
+
+    /* 脈動アニメーション */
+    @keyframes pulseGlow {
+      0%, 100% { transform: scale(1); opacity: 0.9; }
+      50% { transform: scale(1.03); opacity: 1; }
+    }
+    .animate-pulse-glow {
+      animation: pulseGlow 3s infinite ease-in-out;
+    }
+
+    /* 同心円デザイン用 */
+    .concentric-circle {
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+
+    /* Swiper パジネーション カスタマイズ */
+    .swiper-pagination-bullet {
+      background: #2d6a4f !important;
+      opacity: 0.3;
+      width: 8px;
+      height: 8px;
+      transition: all 0.3s ease;
+    }
+    .swiper-pagination-bullet-active {
+      opacity: 1;
+      width: 20px;
+      border-radius: 4px;
+      background: #2d6a4f !important;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="mobile-container">
+    
+    <!-- ヘッダーバー -->
+    <header class="bg-brand-primary text-white px-4 py-2.5 flex items-center justify-between shrink-0 z-20 shadow-sm">
+      <div class="flex items-center space-x-2">
+        <div class="w-6 h-6 rounded-full bg-white flex items-center justify-center text-brand-primary font-bold text-xs">
+          <i class="fa-solid font-black fa-tree"></i>
+        </div>
+        <span class="font-bold text-sm tracking-wide">大台町 Odai Town</span>
+      </div>
+      <span class="text-xs bg-brand-dark px-2.5 py-0.5 rounded-full font-medium text-brand-soft">ミッション＆行動指針</span>
+    </header>
+
+    <!-- Swiper メインコンテナ -->
+    <div class="swiper mySwiper flex-1">
+      <div class="swiper-wrapper">
+
+        <!-- Slide 1: 表紙 -->
+        <div class="swiper-slide justify-between">
+          <div class="text-center mt-4">
+            <span class="inline-block px-3 py-1 bg-brand-soft text-brand-primary rounded-full text-xs font-bold mb-3 shadow-sm">
+              <i class="fa-solid fa-leaf mr-1"></i>ユネスコエコパークの町
+            </span>
+            <h1 class="text-2xl font-black text-brand-dark leading-snug mb-2">
+              わたしたちの<br>
+              <span class="text-brand-primary border-b-4 border-brand-accent pb-0.5">ミッション</span>と<span class="text-brand-primary border-b-4 border-brand-accent pb-0.5">行動指針</span>
+            </h1>
+            <p class="text-xs text-brand-muted font-medium mt-1">〜町デザインと行政マネジメント〜</p>
+          </div>
+
+          <!-- メインビジュアル / イラスト風グラフィック -->
+          <div class="my-6 relative flex justify-center items-center">
+            <div class="w-56 h-56 bg-gradient-to-tr from-brand-soft to-green-100 rounded-full flex items-center justify-center relative shadow-inner">
+              <!-- 背景の葉っぱモチーフ -->
+              <i class="fa-solid fa-mountain text-brand-light/30 text-8xl absolute top-6"></i>
+              <i class="fa-solid fa-water text-blue-300/40 text-7xl absolute bottom-6"></i>
+              
+              <!-- 中央のイラストアイコン群 -->
+              <div class="relative z-10 text-center">
+                <div class="flex justify-center space-x-3 mb-2">
+                  <div class="w-12 h-12 bg-white rounded-2xl shadow-md flex items-center justify-center text-brand-primary text-xl">
+                    <i class="fa-solid fa-people-hold"></i>
+                  </div>
+                  <div class="w-12 h-12 bg-brand-accent rounded-2xl shadow-md flex items-center justify-center text-white text-xl">
+                    <i class="fa-solid fa-coins"></i>
+                  </div>
+                </div>
+                <div class="bg-white/90 backdrop-blur px-4 py-1.5 rounded-full shadow-sm border border-brand-light/20">
+                  <span class="text-xs font-bold text-brand-dark">自然と人の調和と共生</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 下部案内 -->
+          <div class="bg-white p-4 rounded-2xl shadow-sm border border-brand-soft text-center mb-2">
+            <p class="text-xs font-bold text-brand-primary mb-1">大台町の未来を拓くガイドブック</p>
+            <p class="text-[11px] text-gray-500 leading-relaxed">これからの大台町が目指す姿と、職員・地域が共に歩むためのアクションを示します。</p>
+            
+            <div class="mt-3 flex items-center justify-center text-xs text-brand-primary font-bold animate-swipe">
+              <span>スワイプして進む</span>
+              <i class="fa-solid fa-arrow-right-long ml-2"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2: 現状と課題（人口オーナス期） -->
+        <div class="swiper-slide">
+          <div class="mb-3 border-l-4 border-brand-primary pl-3 py-0.5">
+            <span class="text-[10px] text-brand-primary font-bold uppercase tracking-wider">Background</span>
+            <h2 class="text-lg font-bold text-brand-dark">現状と課題：人口オーナス期へ</h2>
+          </div>
+
+          <p class="text-xs text-gray-600 leading-relaxed mb-3">
+            大台町は**生産年齢人口（15〜64歳）が50%を下回る**構造となり、働き手が減る「人口オーナス」の時代に入っています。
+          </p>
+
+          <!-- 数値カードグリッド -->
+          <div class="grid grid-cols-2 gap-2.5 mb-3">
+            <div class="bg-white p-3 rounded-xl shadow-sm border border-emerald-100 flex flex-col justify-between">
+              <div class="flex items-center justify-between text-gray-500 mb-1">
+                <span class="text-[11px] font-bold">総人口</span>
+                <i class="fa-solid fa-users text-brand-light text-xs"></i>
+              </div>
+              <div>
+                <span class="text-xl font-black text-brand-dark">約8,000</span>
+                <span class="text-[10px] text-gray-500"> 人</span>
+              </div>
+              <span class="text-[9px] text-red-500 font-medium mt-1"><i class="fa-solid fa-arrow-trend-down mr-0.5"></i>減少傾向</span>
+            </div>
+
+            <div class="bg-white p-3 rounded-xl shadow-sm border border-emerald-100 flex flex-col justify-between">
+              <div class="flex items-center justify-between text-gray-500 mb-1">
+                <span class="text-[11px] font-bold">高齢化率</span>
+                <i class="fa-solid fa-person-cane text-brand-accent text-xs"></i>
+              </div>
+              <div>
+                <span class="text-xl font-black text-brand-accent">44.0</span>
+                <span class="text-[10px] text-gray-500"> %</span>
+              </div>
+              <span class="text-[9px] text-gray-400 mt-1">全国平均を大きく超過</span>
+            </div>
+
+            <div class="bg-white p-3 rounded-xl shadow-sm border border-emerald-100 flex flex-col justify-between">
+              <div class="flex items-center justify-between text-gray-500 mb-1">
+                <span class="text-[11px] font-bold">山林割合</span>
+                <i class="fa-solid fa-tree text-emerald-600 text-xs"></i>
+              </div>
+              <div>
+                <span class="text-xl font-black text-emerald-700">93</span>
+                <span class="text-[10px] text-gray-500"> %</span>
+              </div>
+              <span class="text-[9px] text-emerald-600 font-medium mt-1">豊かな自然資源</span>
+            </div>
+
+            <div class="bg-white p-3 rounded-xl shadow-sm border border-emerald-100 flex flex-col justify-between">
+              <div class="flex items-center justify-between text-gray-500 mb-1">
+                <span class="text-[11px] font-bold">空き家件数</span>
+                <i class="fa-solid fa-house-crack text-amber-600 text-xs"></i>
+              </div>
+              <div>
+                <span class="text-xl font-black text-amber-700">約600</span>
+                <span class="text-[10px] text-gray-500"> 戸</span>
+              </div>
+              <span class="text-[9px] text-amber-600 font-medium mt-1">利活用の可能性</span>
+            </div>
+          </div>
+
+          <!-- 比較図解：ボーナス vs オーナス -->
+          <div class="bg-white p-3.5 rounded-xl shadow-sm border border-brand-soft mb-3">
+            <h3 class="text-xs font-bold text-brand-dark mb-2 flex items-center">
+              <i class="fa-solid fa-scale-unbalanced-flip text-brand-accent mr-1.5"></i>
+              人口オーナスがもたらす影響
+            </h3>
+            <div class="space-y-2 text-[11px]">
+              <div class="flex items-start bg-red-50 p-2 rounded-lg text-red-800">
+                <i class="fa-solid fa-circle-exclamation text-red-500 mt-0.5 mr-2 shrink-0"></i>
+                <span>**労働力不足・生産性低下**：地域の担い手が不足</span>
+              </div>
+              <div class="flex items-start bg-orange-50 p-2 rounded-lg text-orange-800">
+                <i class="fa-solid fa-circle-exclamation text-orange-500 mt-0.5 mr-2 shrink-0"></i>
+                <span>**社会保障負担の増大**：医療・介護需要の上昇</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 対策ターゲット -->
+          <div class="bg-gradient-to-r from-brand-primary to-brand-medium text-white p-3 rounded-xl shadow-sm text-center">
+            <p class="text-xs font-bold mb-1">【数値目標・目指す方向】</p>
+            <p class="text-[11px] leading-relaxed">
+              生産年齢人口割合を**50%に近づける**とともに、年齢に関わらず**元気で社会に参加する人を増やす**！
+            </p>
+          </div>
+        </div>
+
+        <!-- Slide 3: ミッション（人＋資金を集める） -->
+        <div class="swiper-slide">
+          <div class="mb-3 border-l-4 border-brand-primary pl-3 py-0.5">
+            <span class="text-[10px] text-brand-primary font-bold uppercase tracking-wider">Town Mission</span>
+            <h2 class="text-lg font-bold text-brand-dark">ミッション：人＋資金を集める</h2>
+          </div>
+
+          <!-- ミッション宣言カード -->
+          <div class="bg-white p-4 rounded-2xl shadow-sm border-2 border-brand-light text-center mb-4 relative overflow-hidden">
+            <div class="absolute -right-4 -bottom-4 w-20 h-20 bg-brand-soft/50 rounded-full z-0"></div>
+            <div class="relative z-10">
+              <span class="bg-brand-warm text-brand-dark text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase">Goal</span>
+              <h3 class="text-base font-black text-brand-dark mt-1.5 mb-1">
+                「注目され、選ばれる大台町」へ
+              </h3>
+              <p class="text-xs text-gray-600 leading-relaxed">
+                住む人・関わる人（<strong class="text-brand-primary">人</strong>）と、投資・寄付（<strong class="text-brand-accent">資金</strong>）を呼び込み、持続可能な町へリデザインします。
+              </p>
+            </div>
+          </div>
+
+          <!-- 正のスパイラル図解 -->
+          <div class="bg-white p-4 rounded-2xl shadow-sm border border-brand-soft mb-3">
+            <h4 class="text-xs font-bold text-center text-brand-dark mb-3">
+              <i class="fa-solid fa-rotate text-brand-primary mr-1"></i>持続可能な「正のスパイラル」
+            </h4>
+
+            <div class="space-y-2.5 relative">
+              <!-- ステップ 1 -->
+              <div class="flex items-center space-x-3 bg-brand-soft/40 p-2.5 rounded-xl">
+                <div class="w-7 h-7 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-xs shrink-0">1</div>
+                <div>
+                  <div class="text-xs font-bold text-brand-dark">町が注目される ＆ 選ばれる</div>
+                  <div class="text-[10px] text-gray-500">魅力の発信・ブランディング</div>
+                </div>
+              </div>
+
+              <!-- 矢印 -->
+              <div class="text-center text-brand-light text-xs -my-1">
+                <i class="fa-solid fa-chevron-down"></i>
+              </div>
+
+              <!-- ステップ 2 -->
+              <div class="flex items-center space-x-3 bg-amber-50 p-2.5 rounded-xl border border-amber-100">
+                <div class="w-7 h-7 bg-brand-accent text-white rounded-full flex items-center justify-center font-bold text-xs shrink-0">2</div>
+                <div>
+                  <div class="text-xs font-bold text-brand-dark">「人」と「資金」が集まる</div>
+                  <div class="text-[10px] text-gray-500">移住・関係人口増・投資・ふるさと納税</div>
+                </div>
+              </div>
+
+              <!-- 矢印 -->
+              <div class="text-center text-brand-light text-xs -my-1">
+                <i class="fa-solid fa-chevron-down"></i>
+              </div>
+
+              <!-- ステップ 3 -->
+              <div class="flex items-center space-x-3 bg-emerald-50 p-2.5 rounded-xl border border-emerald-100">
+                <div class="w-7 h-7 bg-emerald-600 text-white rounded-full flex items-center justify-center font-bold text-xs shrink-0">3</div>
+                <div>
+                  <div class="text-xs font-bold text-brand-dark">町がデザインされ財源を得る</div>
+                  <div class="text-[10px] text-gray-500">サービスの充実に再投資</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 4: 3つの目指す姿 -->
+        <div class="swiper-slide">
+          <div class="mb-3 border-l-4 border-brand-primary pl-3 py-0.5">
+            <span class="text-[10px] text-brand-primary font-bold uppercase tracking-wider">3 Pillars</span>
+            <h2 class="text-lg font-bold text-brand-dark">3つの目指す町の姿</h2>
+          </div>
+
+          <p class="text-xs text-gray-600 mb-3">
+            政策の対象に合わせて、3つのアプローチで「町の価値」を高めます。
+          </p>
+
+          <div class="space-y-3">
+            <!-- 1. 住みつづけられる町 -->
+            <div class="bg-white p-3.5 rounded-2xl shadow-sm border-l-4 border-emerald-500">
+              <div class="flex items-center justify-between mb-1">
+                <div class="flex items-center space-x-2">
+                  <span class="w-6 h-6 bg-emerald-100 text-emerald-700 rounded-lg flex items-center justify-center text-xs font-bold">1</span>
+                  <h3 class="text-sm font-bold text-brand-dark">住みつづけられる町</h3>
+                </div>
+                <span class="text-[10px] bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded-full font-bold">住民向け</span>
+              </div>
+              <p class="text-[11px] text-gray-600 leading-relaxed pl-8">
+                公共サービスの拡張と利便性向上で、全世代が安心して暮らせる環境づくり。
+              </p>
+            </div>
+
+            <!-- 2. 住みたい町 -->
+            <div class="bg-white p-3.5 rounded-2xl shadow-sm border-l-4 border-brand-accent">
+              <div class="flex items-center justify-between mb-1">
+                <div class="flex items-center space-x-2">
+                  <span class="w-6 h-6 bg-amber-100 text-amber-700 rounded-lg flex items-center justify-center text-xs font-bold">2</span>
+                  <h3 class="text-sm font-bold text-brand-dark">住みたい町</h3>
+                </div>
+                <span class="text-[10px] bg-amber-50 text-amber-700 px-2 py-0.5 rounded-full font-bold">移住・企業向け</span>
+              </div>
+              <p class="text-[11px] text-gray-600 leading-relaxed pl-8">
+                ブランド力を高め、空き家活用や教育環境の充実で新しい移住・投資を促進。
+              </p>
+            </div>
+
+            <!-- 3. かかわりたい町 -->
+            <div class="bg-white p-3.5 rounded-2xl shadow-sm border-l-4 border-blue-500">
+              <div class="flex items-center justify-between mb-1">
+                <div class="flex items-center space-x-2">
+                  <span class="w-6 h-6 bg-blue-100 text-blue-700 rounded-lg flex items-center justify-center text-xs font-bold">3</span>
+                  <h3 class="text-sm font-bold text-brand-dark">かかわりたい町</h3>
+                </div>
+                <span class="text-[10px] bg-blue-50 text-blue-700 px-2 py-0.5 rounded-full font-bold">ファン・関係人口</span>
+              </div>
+              <p class="text-[11px] text-gray-600 leading-relaxed pl-8">
+                町のファンを増やし、町内外から互いに支えあえる多様な関係性をつくる。
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-4 bg-brand-soft/60 p-3 rounded-xl border border-brand-light/30 text-center">
+            <span class="text-[11px] text-brand-dark font-medium">
+              <i class="fa-solid fa-heart text-brand-primary mr-1"></i>現状の課題を「手段」によって解決し、上記の目的を達成します。
+            </span>
+          </div>
+        </div>
+
+        <!-- Slide 5: 具体的な取り組み（事業例） -->
+        <div class="swiper-slide">
+          <div class="mb-3 border-l-4 border-brand-primary pl-3 py-0.5">
+            <span class="text-[10px] text-brand-primary font-bold uppercase tracking-wider">Action Projects</span>
+            <h2 class="text-lg font-bold text-brand-dark">主な取り組み（施策例）</h2>
+          </div>
+
+          <p class="text-xs text-gray-600 mb-2.5">
+            各ターゲット領域において、先進的なモデルを取り入れた具体的な事業を推進します。
+          </p>
+
+          <div class="space-y-2.5">
+            <!-- 事業 1 -->
+            <div class="bg-white p-3 rounded-xl shadow-sm border border-gray-100 flex items-start space-x-3">
+              <div class="w-9 h-9 bg-emerald-100 text-emerald-700 rounded-xl flex items-center justify-center shrink-0 mt-0.5">
+                <i class="fa-solid fa-handshake-angle text-sm"></i>
+              </div>
+              <div>
+                <div class="flex items-center space-x-1.5">
+                  <h3 class="text-xs font-bold text-brand-dark">支えあいシェア ＆ 移動交通</h3>
+                  <span class="text-[9px] bg-emerald-50 text-emerald-600 px-1.5 py-0.2 rounded">住みつづける</span>
+                </div>
+                <p class="text-[10.5px] text-gray-500 mt-0.5 leading-tight">
+                  「お助けマン」「誰でも食堂」等の地域助け合い＆ドアtoドアの便利な交通網の構築。
+                </p>
+              </div>
+            </div>
+
+            <!-- 事業 2 -->
+            <div class="bg-white p-3 rounded-xl shadow-sm border border-gray-100 flex items-start space-x-3">
+              <div class="w-9 h-9 bg-amber-100 text-amber-700 rounded-xl flex items-center justify-center shrink-0 mt-0.5">
+                <i class="fa-solid fa-house-user text-sm"></i>
+              </div>
+              <div>
+                <div class="flex items-center space-x-1.5">
+                  <h3 class="text-xs font-bold text-brand-dark">空き家リノベ ＆ 若者定住</h3>
+                  <span class="text-[9px] bg-amber-50 text-amber-600 px-1.5 py-0.2 rounded">住みたい</span>
+                </div>
+                <p class="text-[10.5px] text-gray-500 mt-0.5 leading-tight">
+                  空き家を貴重な町資源として活用（梼原モデル）。町産材を活用した若者向け住宅の整備。
+                </p>
+              </div>
+            </div>
+
+            <!-- 事業 3 -->
+            <div class="bg-white p-3 rounded-xl shadow-sm border border-gray-100 flex items-start space-x-3">
+              <div class="w-9 h-9 bg-teal-100 text-teal-700 rounded-xl flex items-center justify-center shrink-0 mt-0.5">
+                <i class="fa-solid fa-seedling text-sm"></i>
+              </div>
+              <div>
+                <div class="flex items-center space-x-1.5">
+                  <h3 class="text-xs font-bold text-brand-dark">ネイチャーポジティブ宣言</h3>
+                  <span class="text-[9px] bg-teal-50 text-teal-600 px-1.5 py-0.2 rounded">自然共生</span>
+                </div>
+                <p class="text-[10.5px] text-gray-500 mt-0.5 leading-tight">
+                  ユネスコエコパークの自然を守り、生物多様性の保全を通じて投資や寄付を呼び込む。
+                </p>
+              </div>
+            </div>
+
+            <!-- 事業 4 -->
+            <div class="bg-white p-3 rounded-xl shadow-sm border border-gray-100 flex items-start space-x-3">
+              <div class="w-9 h-9 bg-blue-100 text-blue-700 rounded-xl flex items-center justify-center shrink-0 mt-0.5">
+                <i class="fa-solid fa-users-line text-sm"></i>
+              </div>
+              <div>
+                <div class="flex items-center space-x-1.5">
+                  <h3 class="text-xs font-bold text-brand-dark">町づくり会社 ＆ 関係人口</h3>
+                  <span class="text-[9px] bg-blue-50 text-blue-600 px-1.5 py-0.2 rounded">かかわりたい</span>
+                </div>
+                <p class="text-[10.5px] text-gray-500 mt-0.5 leading-tight">
+                  「ヒダスケ」等のファンづくり仕組みや外部団体（まちづくり会社）によるブランド化。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 6: 3つの行動指針 -->
+        <div class="swiper-slide">
+          <div class="mb-3 border-l-4 border-brand-primary pl-3 py-0.5">
+            <span class="text-[10px] text-brand-primary font-bold uppercase tracking-wider">Code of Conduct</span>
+            <h2 class="text-lg font-bold text-brand-dark">3つの行動指針</h2>
+          </div>
+
+          <p class="text-xs text-gray-600 mb-3">
+            ミッションを実現するため、行政（GR: Government Relation）視点を取り入れた行動原則です。
+          </p>
+
+          <div class="space-y-3">
+            <!-- 1. Rule change -->
+            <div class="bg-white p-3.5 rounded-2xl shadow-sm border border-brand-soft relative overflow-hidden">
+              <div class="flex items-center space-x-2.5 mb-1.5">
+                <div class="w-8 h-8 rounded-xl bg-brand-primary text-white flex items-center justify-center text-xs font-bold shrink-0">
+                  <i class="fa-solid fa-sliders"></i>
+                </div>
+                <div>
+                  <span class="text-[9px] text-brand-primary font-bold uppercase tracking-wider block">Rule change</span>
+                  <h3 class="text-xs font-bold text-brand-dark">制度を動かす</h3>
+                </div>
+              </div>
+              <p class="text-[11px] text-gray-600 leading-relaxed">
+                世界の変化に合わせて制度も変化すべき。恐れずに制度の設計や変更に関わっていきましょう。
+              </p>
+            </div>
+
+            <!-- 2. Deal make -->
+            <div class="bg-white p-3.5 rounded-2xl shadow-sm border border-brand-soft relative overflow-hidden">
+              <div class="flex items-center space-x-2.5 mb-1.5">
+                <div class="w-8 h-8 rounded-xl bg-brand-accent text-white flex items-center justify-center text-xs font-bold shrink-0">
+                  <i class="fa-solid fa-handshake"></i>
+                </div>
+                <div>
+                  <span class="text-[9px] text-brand-accent font-bold uppercase tracking-wider block">Deal make</span>
+                  <h3 class="text-xs font-bold text-brand-dark">関係を前に進める</h3>
+                </div>
+              </div>
+              <p class="text-[11px] text-gray-600 leading-relaxed">
+                制度の効果を高めるため、組織間・関係者間の協調と密な関係性を重視して進めます。
+              </p>
+            </div>
+
+            <!-- 3. Appeal to local -->
+            <div class="bg-white p-3.5 rounded-2xl shadow-sm border border-brand-soft relative overflow-hidden">
+              <div class="flex items-center space-x-2.5 mb-1.5">
+                <div class="w-8 h-8 rounded-xl bg-emerald-600 text-white flex items-center justify-center text-xs font-bold shrink-0">
+                  <i class="fa-solid fa-bullhorn"></i>
+                </div>
+                <div>
+                  <span class="text-[9px] text-emerald-600 font-bold uppercase tracking-wider block">Appeal to local</span>
+                  <h3 class="text-xs font-bold text-brand-dark">共感を広げる</h3>
+                </div>
+              </div>
+              <p class="text-[11px] text-gray-600 leading-relaxed">
+                住民は大切なパートナー。地域意識を高め、世論の形成に向けて心と時間を遣いましょう。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 7: おわりに（オシャレな町づくりとは） -->
+        <div class="swiper-slide justify-between">
+          <div>
+            <div class="mb-3 border-l-4 border-brand-primary pl-3 py-0.5">
+              <span class="text-[10px] text-brand-primary font-bold uppercase tracking-wider">Conclusion</span>
+              <h2 class="text-lg font-bold text-brand-dark">オシャレな町づくりとは</h2>
+            </div>
+
+            <!-- メインメッセージカード -->
+            <div class="bg-gradient-to-br from-brand-primary to-brand-dark text-white p-4 rounded-2xl shadow-md my-3 relative">
+              <i class="fa-solid fa-quote-left text-white/20 text-3xl absolute top-2 left-3"></i>
+              <div class="relative z-10 text-center space-y-2">
+                <p class="text-[11px] font-medium text-brand-soft">これからの大台町が目指す姿</p>
+                <p class="text-xs font-bold leading-relaxed">
+                  いろんな人から<br>
+                  <span class="text-brand-warm text-sm font-black">「町がどのように見えているか？」</span><br>
+                  に気を配って町づくりをすること。
+                </p>
+                <div class="w-10 h-0.5 bg-brand-warm/50 mx-auto"></div>
+                <p class="text-[10px] text-emerald-100 leading-relaxed">
+                  私たちが設計する制度が最先端であり、国や世界、時代のトレンドに乗っている状態をつくります。
+                </p>
+              </div>
+            </div>
+
+            <!-- 大台町長 上瀬裕美様 紹介カード -->
+            <div class="bg-white p-3.5 rounded-2xl shadow-sm border border-brand-soft my-3">
+              <div class="flex items-center space-x-3">
+                <div class="relative shrink-0">
+                  <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-brand-primary shadow-sm bg-brand-soft flex items-center justify-center">
+                    <img src="may.jpg" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><defs><linearGradient id=\'g\' x1=\'0%\' y1=\'0%\' x2=\'100%\' y2=\'100%\'><stop offset=\'0%\' stop-color=\'%2352b788\'/><stop offset=\'100%\' stop-color=\'%231b4332\'/></linearGradient></defs><rect width=\'100\' height=\'100\' fill=\'url(%23g)\'/><circle cx=\'50\' cy=\'38\' r=\'20\' fill=\'%23f4f6f0\'/><path d=\'M20,90 Q50,60 80,90 Z\' fill=\'%23f4f6f0\'/></svg>'" id="kamisePhoto" alt="大台町長 上瀬裕美" class="w-full h-full object-cover">
+                  </div>
+                  <span class="absolute -bottom-1 -right-1 bg-brand-accent text-white text-[9px] px-1.5 py-0.2 rounded-full font-bold shadow-xs">町長</span>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <p class="text-[10px] text-brand-primary font-bold tracking-wider">大台町長</p>
+                  <h3 class="text-sm font-black text-brand-dark leading-tight mb-1">上瀬 裕美 <span class="text-[10px] font-normal text-gray-500">Hiromi Kamise</span></h3>
+                  <p class="text-[10.5px] text-gray-600 leading-snug">
+                    「豊かな自然と人の温もりが調和する大台町の魅力を、新しい発想で未来へつないでまいります。」
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- サンクスカード -->
+            <div class="bg-brand-soft/50 p-3 rounded-xl border border-brand-light/30 text-center">
+              <p class="text-[11px] font-bold text-brand-dark mb-0.5">持続可能な大台町を、みんなで共に。</p>
+              <p class="text-[10px] text-gray-500">ご意見・ご参加をお待ちしております</p>
+            </div>
+          </div>
+
+          <div class="text-center py-2">
+            <span class="text-[10px] text-gray-400">© Odai Town. All Rights Reserved.</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- パジネーション (ページインジケーター) -->
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- ナビゲーションフッター -->
+    <footer class="bg-white/90 backdrop-blur border-t border-gray-200 px-4 py-2 flex items-center justify-between z-20 shrink-0">
+      <button id="btnPrev" class="text-xs font-bold text-brand-primary flex items-center space-x-1 px-3 py-1.5 rounded-lg bg-brand-soft active:bg-brand-light/40 transition">
+        <i class="fa-solid fa-chevron-left"></i>
+        <span>前へ</span>
+      </button>
+
+      <span id="pageIndicator" class="text-xs font-bold text-brand-dark">1 / 7</span>
+
+      <button id="btnNext" class="text-xs font-bold text-white flex items-center space-x-1 px-3 py-1.5 rounded-lg bg-brand-primary active:bg-brand-dark transition">
+        <span>次へ</span>
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+    </footer>
+
+  </div>
+
+  <!-- Swiper.js JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Swiper 初期化
+      const swiper = new Swiper('.mySwiper', {
+        direction: 'horizontal',
+        loop: false,
+        speed: 400,
+        spaceBetween: 0,
+        effect: 'slide',
+        
+        // タッチ / スワイプ操作を確実に有効化
+        touchEventsTarget: 'wrapper',
+        simulateTouch: true,
+        allowTouchMove: true,
+        grabCursor: true,
+
+        // パジネーション
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+
+        // ページ切り替え時の処理
+        on: {
+          slideChange: function () {
+            const current = swiper.realIndex + 1;
+            const total = swiper.slides.length;
+            document.getElementById('pageIndicator').innerText = current + ' / ' + total;
+
+            // ボタン表示制御
+            const btnPrev = document.getElementById('btnPrev');
+            const btnNext = document.getElementById('btnNext');
+
+            if (current === 1) {
+              btnPrev.style.opacity = '0.4';
+              btnPrev.style.pointerEvents = 'none';
+            } else {
+              btnPrev.style.opacity = '1';
+              btnPrev.style.pointerEvents = 'auto';
+            }
+
+            if (current === total) {
+              btnNext.style.opacity = '0.4';
+              btnNext.style.pointerEvents = 'none';
+            } else {
+              btnNext.style.opacity = '1';
+              btnNext.style.pointerEvents = 'auto';
+            }
+          }
+        }
+      });
+
+      // ボタンによる操作
+      document.getElementById('btnPrev').addEventListener('click', function () {
+        swiper.slidePrev();
+      });
+
+      document.getElementById('btnNext').addEventListener('click', function () {
+        swiper.slideNext();
+      });
+
+      // 初期状態のボタン制御
+      document.getElementById('btnPrev').style.opacity = '0.4';
+      document.getElementById('btnPrev').style.pointerEvents = 'none';
+    });
+  </script>
+</body>
+</html>
